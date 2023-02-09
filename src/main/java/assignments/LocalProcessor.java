@@ -60,7 +60,7 @@ public class LocalProcessor
         if (stringList.size() != 0){
             for (String element : stringList)
             {
-                if (!element.isEmpty()){
+                if (element != null){
                     stringBuilder
                             .append(element)
                             .append(" ");
