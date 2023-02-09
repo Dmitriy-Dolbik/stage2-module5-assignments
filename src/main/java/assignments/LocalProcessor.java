@@ -45,7 +45,7 @@ public class LocalProcessor
             stringArrayList = new LinkedList<>(stringList);
             for (String element : stringList)
             {
-                if (!element.isEmpty()){
+                if (element != null){
                     System.out.println(element.hashCode());
                 }
             }
@@ -56,11 +56,13 @@ public class LocalProcessor
     public String fullNameProcessorGenerator(List<String> stringList)
     {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(processorName);
+        if (processorName != null){
+            stringBuilder.append(processorName);
+        }
         if (stringList.size() != 0){
             for (String element : stringList)
             {
-                if (element != null){
+                if (element != null && !element.isEmpty()){
                     stringBuilder
                             .append(element)
                             .append(" ");
